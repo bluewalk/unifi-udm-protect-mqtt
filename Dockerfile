@@ -7,4 +7,12 @@ RUN apk add --no-cache inotify-tools mosquitto-clients
 
 COPY ./unifi-udm-protect-mqtt.sh /
 
+RUN addgroup -g 902 -S unifi && \
+    addgroup -g 903 -S unifi-protect && \
+    addgroup -g 1001 -S unifi-protect-mqtt && \
+    adduser -G unifi-protect-mqtt -S -u 1001 unifi-protect-mqtt && \
+    addgroup unifi-protect-mqtt unifi && \
+    addgroup unifi-protect-mqtt unifi-protect
+USER unifi-protect-mqtt
+
 ENTRYPOINT [ "/bin/sh", "/unifi-udm-protect-mqtt.sh" ]
