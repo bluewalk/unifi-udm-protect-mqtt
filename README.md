@@ -6,11 +6,11 @@ The following environment variables are required when no default has been set
 
 | Variable | Description | Default |
 |--|--|--|
-| MQTT_BROKER | The DNS/IP address of the MQTT broker| - |
+| MQTT_BROKER | The DNS/IP address of the MQTT broker| `192.168.1.1` |
 | MQTT_PORT |The port of the MQTT broker | `1883` |
 | MQTT_TOPIC_BASE | The base topic | `unifi/camera/motion` |
-| MQTT_START_PAYLOAD | Payload when motion detected | `On` |
-| MQTT_START_PAYLOAD | Payload when the motion ends | `Off` |
+| MQTT_START_PAYLOAD | Payload when motion detected | `Start` |
+| MQTT_END_PAYLOAD | Payload when the motion ends | `End` |
 | MQTT_USER | Username of the MQTT broker | - |
 | MQTT_PASS | Password of the user | - |
 | MQTT_ID | Id of client (to make it work with Hassio) | - |
