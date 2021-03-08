@@ -20,5 +20,6 @@ The following environment variables are required when no default has been set
  podman run --restart always --name protect-mqtt --detach=true \
     -e MQTT_BROKER=192.168.1.x \
     -v /srv/unifi-protect/logs:/logs:ro \
+    --network=host \
     bluewalk/unifi-udm-protect-mqtt:latest
 ```
