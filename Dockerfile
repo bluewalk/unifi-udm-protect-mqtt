@@ -9,8 +9,8 @@ COPY ./unifi-udm-protect-mqtt.sh /
 
 RUN addgroup -g 902 -S unifi && \
     addgroup -g 903 -S unifi-protect && \
-    addgroup -g 1001 -S unifi-protect-mqtt && \
-    adduser -G unifi-protect-mqtt -S -u 1001 unifi-protect-mqtt && \
+    addgroup -g 9903 -S unifi-protect-mqtt && \
+    adduser -G unifi-protect-mqtt -S -u 9903 unifi-protect-mqtt && \
     addgroup unifi-protect-mqtt unifi && \
     addgroup unifi-protect-mqtt unifi-protect
 USER unifi-protect-mqtt
